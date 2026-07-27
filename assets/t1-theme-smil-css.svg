@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="200" viewBox="0 0 840 200" role="img" aria-label="Render test 1">
+  <style>
+    .bg   { fill: #ffffff; }
+    .fg   { fill: #0d1117; }
+    .mut  { fill: #57606a; }
+    .line { stroke: #0d1117; }
+    @media (prefers-color-scheme: dark) {
+      .bg   { fill: #0d1117; }
+      .fg   { fill: #e6edf3; }
+      .mut  { fill: #8b949e; }
+      .line { stroke: #e6edf3; }
+    }
+    .dash {
+      stroke-width: 2; fill: none;
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      animation: draw 3s ease-in-out infinite;
+    }
+    @keyframes draw {
+      0%   { stroke-dashoffset: 600; }
+      55%  { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 0; opacity: 0.15; }
+    }
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
+  </style>
+
+  <rect class="bg" width="840" height="200" rx="10"/>
+  <rect x="0.5" y="0.5" width="839" height="199" rx="10" fill="none" stroke="#888" stroke-opacity=".35"/>
+
+  <text class="fg" x="24" y="38" font-family="monospace" font-size="15" font-weight="700">T1 — theme + CSS keyframes + SMIL, one file, via &lt;img&gt;</text>
+
+  <!-- CSS @keyframes line drawing -->
+  <text class="mut" x="24" y="70" font-family="monospace" font-size="12">CSS @keyframes (line should draw):</text>
+  <path class="dash line" d="M 24 96 L 240 96 L 300 76 L 380 116 L 460 88 L 560 96 L 810 96"/>
+
+  <!-- CSS keyframes opacity pulse -->
+  <text class="mut" x="24" y="140" font-family="monospace" font-size="12">CSS pulse:</text>
+  <circle class="fg pulse" cx="130" cy="136" r="7"/>
+
+  <!-- SMIL -->
+  <text class="mut" x="200" y="140" font-family="monospace" font-size="12">SMIL animate (dot should travel):</text>
+  <circle class="fg" cx="200" cy="164" r="6">
+    <animate attributeName="cx" values="200;800;200" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <text class="mut" x="24" y="185" font-family="monospace" font-size="11">If background is dark here while GitHub is dark → prefers-color-scheme works inside img-embedded SVG.</text>
+</svg>

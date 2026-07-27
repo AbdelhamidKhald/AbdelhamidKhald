@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="230" viewBox="0 0 840 230" role="img" aria-label="Font test">
+  <style>
+    .bg { fill:#ffffff } .fg { fill:#0d1117 }
+    @media (prefers-color-scheme: dark){ .bg{fill:#0d1117} .fg{fill:#e6edf3} }
+  </style>
+  <rect class="bg" width="840" height="230" rx="10"/>
+  <rect x="0.5" y="0.5" width="839" height="229" rx="10" fill="none" stroke="#888" stroke-opacity=".35"/>
+  <text class="fg" x="20" y="30" font-size="14" font-weight="700" font-family="monospace">T2 — which font-family strings actually resolve?</text>
+  <text class="fg" x="20" y="60"  font-size="17" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace">ui-monospace stack — Abdelhamid 0123 {} =&gt;</text>
+  <text class="fg" x="20" y="88"  font-size="17" font-family="'JetBrains Mono', monospace">JetBrains Mono (likely fallback) — Abdelhamid 0123</text>
+  <text class="fg" x="20" y="116" font-size="17" font-family="Georgia, 'Times New Roman', serif">Georgia serif — Abdelhamid Khald 0123</text>
+  <text class="fg" x="20" y="144" font-size="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">System sans stack — Abdelhamid Khald 0123</text>
+  <text class="fg" x="20" y="172" font-size="17" font-family="Impact, Haettenschweiler, sans-serif">Impact — ABDELHAMID KHALD</text>
+  <text class="fg" x="20" y="200" font-size="17" font-family="'Courier New', monospace" letter-spacing="6">letter-spacing test ABDELHAMID</text>
+  <text class="fg" x="20" y="222" font-size="12" font-family="monospace">textLength/lengthAdjust below in T3</text>
+</svg>
